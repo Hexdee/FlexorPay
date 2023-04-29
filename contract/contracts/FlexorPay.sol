@@ -7,15 +7,17 @@ import "./IUniswapV2Router02.sol";
 import "./IERC20.sol";
 import "./TransferHelper.sol";
 
-contract FlexorPay is Ownable {
+contract ReniPay is Ownable {
     uint256 public slippage;
     address public swapRouter = 0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506;
-    address public stableCoin = 0xA5E9Bad00A0b8291b02DEC6286f1db1C35a9903a; //
+    address public stableCoin = 0xA5E9Bad00A0b8291b02DEC6286f1db1C35a9903a;
 
     event paymentSuccessful(
-        uint256 indexed amount,
-        address indexed payer,
-        string indexed transactionId
+        uint256 amount,
+        string payer,
+        address payer_address,
+        string merchant,
+        string description
     );
     event routerUpdated(address proviousRouter, address newRouter);
     event stableCoinUpdated(address proviousStableCoin, address newStableCoin);
@@ -24,7 +26,9 @@ contract FlexorPay is Ownable {
     function makePayment(
         address _token,
         uint256 _amountInUSD,
-        string memory _transactionId
+        string memory _name,
+        string memory _description,
+        string memory _merchant
     ) public payable {
         address[] memory _path;
         _path = new address[](2);
@@ -53,6 +57,7 @@ contract FlexorPay is Ownable {
                 _amountInUSD
             );
         } else {
+            _path[0] = IUniswapV2Router02(swapRouter).WETH();
             _tokenAmount = requiredTokenAmount(
                 _amountInUSD,
                 IUniswapV2Router02(swapRouter).WETH()
@@ -62,7 +67,13 @@ contract FlexorPay is Ownable {
                 value: _tokenAmount
             }(_amountInUSD, _path, address(this), block.timestamp);
         }
-        emit paymentSuccessful(_amountInUSD, msg.sender, _transactionId);
+        emit paymentSuccessful(
+            _amountInUSD,
+            _name,
+            msg.sender,
+            _merchant,
+            _description
+        );
     }
 
     function updateRouter(address _router) external onlyOwner {
