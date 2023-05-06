@@ -36,7 +36,7 @@ const INFO = [
   {
     type: "Username",
     name: "username",
-    placeholder: "Enter a username you will like to use on Renipay",
+    placeholder: "Enter a username you will like to use on FlexorPay",
   },
   {
     type: "Email",
@@ -123,7 +123,7 @@ const Signup = () => {
       title="Registration"
       description={
         <>
-          Welcome to Renipay
+          Welcome to Flexorpay
           <span className="wave">👋</span>
           {/* <span className="text-primary-05">WAP TV </span> */}
         </>

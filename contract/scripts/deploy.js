@@ -7,12 +7,12 @@
 const hre = require("hardhat");
 
 async function main() {
-  const Reni = await hre.ethers.getContractFactory("ReniPay");
-  const reni = await Reni.deploy();
+  const FlexorPay = await hre.ethers.getContractFactory("FlexorPay");
+  const flexorpay = await FlexorPay.deploy();
 
-  await reni.deployed();
+  await flexorpay.deployed();
 
-  console.log(`ReniPay contract deployed to ${reni.address}`);
+  console.log(`ReniPay contract deployed to ${flexorpay.address}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

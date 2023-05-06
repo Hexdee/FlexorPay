@@ -10,7 +10,7 @@ export { default as Padlock } from "./Padlock";
 export { default as Pencil } from "./Pencil";
 export { default as Placeholder } from "./Placeholder";
 export { default as PlaceholderNoSpace } from "./PlaceholderNoSpace";
-export { default as RenipayLogo } from "./RenipayLogo";
+export { default as FlexorpayLogo } from "./FlexorpayLogo";
 export { default as Search } from "./Search";
 export { default as Settings } from "./Settings";
 export { default as Spinner } from "./Spinner";

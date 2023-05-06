@@ -53,7 +53,7 @@ const Profile = ({ isLoadingUser }) => {
 
   const { logout } = useAuthContext();
   const [copied, setCopied] = useState(false);
-  const [value, setValue] = useState("renipay.onrender.com/payment/abass");
+  const [value, setValue] = useState("flexorpay.onrender.com/payment/abass");
   const [copiedText, copy] = useCopyToClipboard();
   const { user } = useAuthContext();
 
@@ -84,11 +84,11 @@ const Profile = ({ isLoadingUser }) => {
                 </p>
                 <div className="flex gap-4 items-center">
                   <Input
-                    placeholder="renipay"
+                    placeholder="flexorpay"
                     value={PAYMENT_LINK + user?.username}
                     disabled={true}
                     inputClassName="w-52"
-                    // className="w-52"
+                  // className="w-52"
                   />
                   <button
                     className={classNames(

@@ -1,5 +1,6 @@
 import Button from "@app/components/common/Button";
-import RenipayLogo from "@app/components/Icon/icons/RenipayLogo";
+import FlexorpayLogo from "@app/components/Icon/icons/FlexorpayLogo";
+
 // import { Facebook, Google } from "@app/components/Icon/icons";
 import Layout from "@app/views/Authentication/Layout";
 import classNames from "classnames";
@@ -42,10 +43,10 @@ const AuthForm = ({
     () =>
       nonAuth
         ? (props) => (
-            <section className="flex items-center h-full w-full">
-              {props.children}
-            </section>
-          )
+          <section className="flex items-center h-full w-full">
+            {props.children}
+          </section>
+        )
         : Layout,
     [nonAuth]
   );
@@ -58,11 +59,11 @@ const AuthForm = ({
         <div className="flex justify-center">
           <Link to="/">
             <span className=" aspect-square">
-              <RenipayLogo
+              <FlexorpayLogo
                 className={classNames("ml-0 ", {
                   "md:hidden": nonAuth,
                 })}
-                // hide={false}
+              // hide={false}
               />
             </span>
           </Link>
