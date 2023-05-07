@@ -12,7 +12,7 @@ async function main() {
 
   await flexorpay.deployed();
 
-  console.log(`ReniPay contract deployed to ${flexorpay.address}`);
+  console.log(`FlexorPay contract deployed to ${flexorpay.address}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

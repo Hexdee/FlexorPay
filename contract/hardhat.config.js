@@ -8,7 +8,7 @@ module.exports = {
     hardhat: {
     },
     mumbai: {
-      url: process.env.QUICKNODE_URL,
+      url: `https://rpc-mumbai.maticvigil.com/v1/${process.env.APP_ID}`,
       accounts: [process.env.PRIVATE_KEY]
     }
   },

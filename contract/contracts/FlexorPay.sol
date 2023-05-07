@@ -7,10 +7,10 @@ import "./IUniswapV2Router02.sol";
 import "./IERC20.sol";
 import "./TransferHelper.sol";
 
-contract ReniPay is Ownable {
+contract FlexorPay is Ownable {
     uint256 public slippage;
     address public swapRouter = 0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506;
-    address public stableCoin = 0xA5E9Bad00A0b8291b02DEC6286f1db1C35a9903a;
+    address public stableCoin = 0x0FA8781a83E46826621b3BC094Ea2A0212e71B23; //0xA5E9Bad00A0b8291b02DEC6286f1db1C35a9903a;
 
     event paymentSuccessful(
         uint256 amount,
