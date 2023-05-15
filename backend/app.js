@@ -48,7 +48,7 @@ app.get("/user/:username", async (req, res) => {
       balance = 0;
     }
     res.status(200);
-    res.send({ first_name, last_name, email, username, balance })
+    res.send({ first_name, last_name, email, username, balance: +balance.toFixed(2) })
   } catch (err) {
     res.status(404);
     res.send("user not found");
@@ -61,7 +61,7 @@ app.post("/auth", auth, async (req, res) => {
     const user = await User.findOne({ email });
     const { first_name, last_name, username, balance, transactions } = user;
     res.status(200);
-    res.send({ first_name, last_name, email, username, email, balance, transactions });
+    res.send({ first_name, last_name, email, username, email, balance: +balance.toFixed(2), transactions });
   } catch (err) {
     res.status(400);
     res.send("Bad request");
@@ -159,7 +159,7 @@ app.post("/login", async (req, res) => {
       user.token = token;
       const { first_name, last_name, balance, transactions } = user;
       // user
-      res.status(200).json({ first_name, last_name, email, balance, token, transactions });
+      res.status(200).json({ first_name, last_name, email, balance: +balance.toFixed(2), token, transactions });
     } else {
       res.status(400).send("Invalid Credentials");
     }
@@ -186,7 +186,7 @@ contract.on("paymentSuccessful", async (amount, payer, payer_address, merchant, 
       type: "payment",
       payer,
       payer_address,
-      amount: Number(amount / 10 ** 6),
+      amount: Number(amount) / 10 ** 6,
       merchant,
       description,
       status: "confirm",
