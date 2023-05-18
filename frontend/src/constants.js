@@ -7,7 +7,7 @@ const REGEX_ALPHANUMERIC_AT_LEAST_ONE_SYMBOL_AND_UPPERCASE =
 //  EGEX_ALPHANUMERIC_AT_LEAST_ONE_SYMBOL_AND_UPPERCASE = /^(?=.[A-Z])(?=.[0-9])(?=.[!@#$%^&()_+-={}|[]\:;'<>,.?\/]).+$/
 // const REGEX_ALPHANUMERIC_AT_LEAST_ONE_SYMBOL_AND_UPPERCASE = /^(?=.*[A-Z])(?=.*[^A-Za-z0-9]).+$/
 const USER_ALREADY_EXISTS = "User Already Exist. Please Login";
-const STORAGE_PREFIX = "reni_pay_";
+const STORAGE_PREFIX = "flexor_pay_";
 
 const INVALID_AUTH_MESSAGE = "Invalid auth token";
 const AUTH_IS_REQUIRED = "Auth is required";
@@ -21,7 +21,7 @@ const NO_USER_FOUND = "User not found!";
 const MOVIE = "movie";
 const FULLMOVIE = "fullMovie";
 const INVALID_TOKEN = "Invalid Token";
-const PAYMENT_LINK = "renipay.onrender.com/"
+const PAYMENT_LINK = "flexorpay.onrender.com/"
 export {
   USER_ALREADY_EXISTS,
   MAX_MOBILE_WIDTH,

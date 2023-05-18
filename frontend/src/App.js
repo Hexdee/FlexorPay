@@ -18,6 +18,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import PrivateRoute from "./components/PrivateRoute";
 import { useState } from "react";
 import Transactions from "./views/Profile/views/Transactions";
+import Withdrawals from "./views/Profile/views/Withdrawals";
 // import AuthProvider from "./utils/contexts.js/AuthProvider";
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import { DashboardLayout } from "./layouts";
@@ -89,6 +90,10 @@ function App() {
             <Route
               path="transactions"
               element={<Transactions isLoading={isLoadingUser} />}
+            />
+            <Route
+              path="withdrawals"
+              element={<Withdrawals isLoading={isLoadingUser} />}
             />
           </Route>
         </Routes>

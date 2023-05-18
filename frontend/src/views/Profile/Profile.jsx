@@ -33,8 +33,8 @@ const options = [
   // },
   {
     Icon: Pencil,
-    option: "Edit beneficiaries",
-    link: "/profile",
+    option: "Withdrawals",
+    link: "/profile/withdrawals",
   },
   {
     Icon: Placeholder,
