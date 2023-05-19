@@ -176,7 +176,7 @@ const provider = new ethers.providers.JsonRpcProvider(`https://rpc-mumbai.maticv
 const contract = new ethers.Contract(flexorpayAddress, flexorpayAbi, provider);
 contract.on("paymentSuccessful", async (amount, payer, payer_address, merchant, description) => {
   try {
-    const value = ethers.utils.formatEther(amount);
+    const value = Number(amount) / 10 ** 6;
     console.log({ merchant })
 
     const user = await User.findOne({ username: merchant });
