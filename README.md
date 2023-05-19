@@ -1,1 +1,1 @@
-# Renipay
+# FlexorPay
